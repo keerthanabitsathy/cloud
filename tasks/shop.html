@@ -1,0 +1,666 @@
+<html>
+<head>
+<title>DOODLES</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/e2a712ceae.js" crossorigin="anonymous"></script>
+<style>
+header{
+background-color: #ffe6ff;
+margin:0px;
+padding:12px;
+}
+li {
+      display: inline;  
+    }
+footer{
+background-color: black;
+
+color:white;
+}
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.topnav a {
+  float: center;
+  display: inline;
+  color: black;
+  text-align: center;
+  padding: 200 50px;
+
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ccffff;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+.fa-solid fa-user a:hover{
+border-radius: 10px 0px 10px 0px;
+background-color:lighblue;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+	text-align:center;
+  }
+}
+.btn-11 {
+  border: none;
+  background: rgb(251,33,117);
+    background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+    color: #fff;
+    overflow: hidden;
+}
+.btn-11:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.btn-11:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+.btn-11:hover{
+  opacity: .7;
+}
+.btn-11:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+
+@-webkit-keyframes shiny-btn1 {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}
+.container{
+  padding: 1em 0;
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 640px){
+  .container{
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .container{
+    width: 33.33333%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  text-rendering: optimizelegibility;
+}
+
+/*START of Product List*/
+/* Fallback Layout */
+.productlist {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.product {
+  margin: 1rem 0;
+}
+
+/*Grid Layout Properties*/
+@supports (display: grid) {
+  .productlist{ 
+    max-width: 10000px;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    
+  }
+  .product {
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+/*Internal Properties*/
+.productlist {
+  font-family: Avenir, Roboto, Helvetica, san-serif; 
+  font-size: 85%;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	100% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-5px);
+	}
+	/*100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}*/
+}
+
+.product {
+  box-sizing: border-box;
+  background-color:#a8193d; 
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 40px;
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.6);
+}
+.product:hover{
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  
+	transform: translateY(-3px);
+	//animation: float 0.5s linear;
+  //animation-fill-mode: forwards;
+  border-radius: 3px;
+}
+
+h2 {
+  height: auto;
+  width: 100%;
+  font-size: 1.7em;
+  text-align: center;
+}
+a{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.inventory {
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0 0 0rem;
+}
+.cost {
+  color:#FFFFFF;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0 0 1rem;
+}
+.image {
+  order: -1;
+  align-self: center;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px 3px 0 0;
+  box-sizing:border-box;
+  box-shadow: 0 2px 5px 1px rgba(0,0,0,0.4);
+}
+form{
+  margin: auto; 
+  color: white;
+  padding-left: 2rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+}
+
+input[type=number] {
+  transition: all 0.3s ease-in-out;
+  padding:5px 15px; 
+  background-color: #dadada; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 4px;
+  border-radius: 4px; 
+  border: 2px solid #dadada;
+  border-radius: 7px;
+}
+
+input[type=submit] {
+  transition: all 0.3s ease-in-out;
+  padding:5px 15px; 
+  background:#dadada; 
+  border: 2px solid #dadada;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+    
+}
+input[type=number]:hover {
+  outline: none;
+  border-color: #9ecaed;
+  background-color:#9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+input[type=submit]:hover {
+  outline: none;
+  color: var(--dark);
+  background-color:#9ecaed;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+/*END of Product List*/
+</style>
+</head>
+<body>
+<header>
+<ul>
+    <li><a  style=" text-transform:lowercase;font-family:Serif Times New Roman;color:black;font-size:12px;" class="fa-solid fa-location-dot" href="https://goo.gl/maps/w19JngBqMmeNBBUR9"> &nbsp; &nbsp; H-73,&nbsp; Periyar Nagar Rd,&nbsp; Periyar Nagar, Erode </a></li> 
+    <li><a style="float:right;  font-style: italic;color:black;font-size:10px;" class="fa-solid fa-phone">&nbsp;&nbsp;9629646695</a></li> 
+ <i  style ="float:right"class="fa-solid fa-magnifying-glass"></i>	
+   
+  </ul>
+</header>
+<center>
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">DOODLES</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active" ><a href="doodles.html">HOME</a></li>
+      <li><a href="shop.html">SHOP</a></li>
+      <li><a href="doodlecontact.html">CONTACT</a></li>
+      <li><a href="doodleabout.html">ABOUT US</a></li>
+	  <li><a href="admin.html">ADMIN DASHBOARD</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="doodlesignin.html"><span class="glyphicon glyphicon-user"></span>SIGNIN/REGISTER</a></li>
+  
+    </ul>
+  </div>
+</nav>
+
+</div>
+<body>
+<div class="productlist">
+        <div class="product">
+            <h2><a href="/product/0">Ocean Blue Shirt</a></h2>
+            <div class="image"><img alt="Ocean Blue Shirt image"
+                                    src="https://burst.shopifycdn.com/photos/young-man-in-bright-fashion_925x.jpg"></div>
+            <div class="inventory">0 in stock</div>
+            <div class="cost">$128.59</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="0">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/1">Classic Varsity Top</a></h2>
+            <div class="image"><img alt="Classic Varsity Top image"
+                                    src="https://burst.shopifycdn.com/photos/casual-fashion-woman_925x.jpg"></div>
+            <div class="inventory">5 in stock</div>
+            <div class="cost">$126.55</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="1">
+ <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/2">Yellow Wool Jumper</a></h2>
+            <div class="image"><img
+                    alt="Yellow Wool Jumper image"
+                    src="https://burst.shopifycdn.com/photos/autumn-photographer-taking-picture_925x.jpg"></div>
+            <div class="inventory">81 in stock</div>
+            <div class="cost">$175.31</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="2">
+                     <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/3">Floral White Top</a></h2>
+            <div class="image"><img alt="Floral White Top image"
+                                    src="https://burst.shopifycdn.com/photos/city-woman-fashion_925x@2x.jpg"></div>
+            <div class="inventory">42 in stock</div>
+            <div class="cost">$126.75</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="3">
+                     <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/4">Striped Silk Blouse</a></h2>
+            <div class="image"><img alt="Striped Silk Blouse image"
+                                    src="https://burst.shopifycdn.com/photos/striped-blouse-fashion_925x.jpg"></div>
+            <div class="inventory">86 in stock</div>
+            <div class="cost">$25.22</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="4">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/5">Classic Leather Jacket</a></h2>
+            <div class="image"><img alt="Classic Leather Jacket image"
+                                    src="https://burst.shopifycdn.com/photos/leather-jacket-and-tea_925x.jpg"></div>
+            <div class="inventory">9 in stock</div>
+            <div class="cost">$94.26</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="5">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/6">Dark Denim Top</a></h2>
+            <div class="image"><img alt="Dark Denim Top image"
+                                    src="https://burst.shopifycdn.com/photos/young-female-models-denim_925x.jpg"></div>
+            <div class="inventory">78 in stock</div>
+            <div class="cost">$90.31</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="6">
+                   <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/7">Navy Sports Jacket</a></h2>
+            <div class="image"><img alt="Navy Sports Jacket image"
+                                    src="https://burst.shopifycdn.com/photos/mens-fall-fashion-jacket_925x.jpg"></div>
+            <div class="inventory">25 in stock</div>
+            <div class="cost">$149.05</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="7">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/8">Soft Winter Jacket</a></h2>
+            <div class="image"><img alt="Soft Winter Jacket image"
+                                    src="https://burst.shopifycdn.com/photos/smiling-woman-on-snowy-afternoon_925x.jpg"></div>
+            <div class="inventory">38 in stock</div>
+            <div class="cost">$111.23</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="8">
+                   <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/9">Black Leather Bag</a></h2>
+            <div class="image"><img alt="Black Leather Bag image"
+                                    src="https://burst.shopifycdn.com/photos/black-bag-over-the-shoulder_925x.jpg"></div>
+            <div class="inventory">24 in stock</div>
+            <div class="cost">$67.2</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="9">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/10">Zipped Jacket</a></h2>
+            <div class="image"><img alt="Zipped Jacket image"
+                                    src="https://burst.shopifycdn.com/photos/menswear-blue-zip-up-jacket_925x.jpg"></div>
+            <div class="inventory">95 in stock</div>
+            <div class="cost">$56.73</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="10">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/11">Silk Summer Top</a></h2>
+            <div class="image"><img alt="Silk Summer Top image"
+                                    src="https://burst.shopifycdn.com/photos/young-hip-woman-at-carnival_925x.jpg"></div>
+            <div class="inventory">63 in stock</div>
+            <div class="cost">$36.56</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="11">
+                   <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/12">Long Sleeve Cotton Top</a></h2>
+            <div class="image"><img alt="Long Sleeve Cotton Top image"
+                                    src="https://burst.shopifycdn.com/photos/woman-outside-brownstone_925x.jpg"></div>
+            <div class="inventory">71 in stock</div>
+            <div class="cost">$44.34</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="12">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/13">Chequered Red Shirt</a></h2>
+            <div class="image"><img alt="Chequered Red Shirt image"
+                                    src="https://burst.shopifycdn.com/photos/red-plaid-shirt_925x.jpg"></div>
+            <div class="inventory">88 in stock</div>
+            <div class="cost">$22.13</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="13">
+                   <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/14">White Cotton Shirt</a></h2>
+            <div class="image"><img alt="White Cotton Shirt image"
+                                    src="https://burst.shopifycdn.com/photos/smiling-woman-poses_925x.jpg"></div>
+            <div class="inventory">13 in stock</div>
+            <div class="cost">$14.63</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="14">
+                   <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/15">Olive Green Jacket</a></h2>
+            <div class="image"><img alt="Olive Green Jacket image"
+                                    src="https://burst.shopifycdn.com/photos/urban-fashion_925x.jpg"></div>
+            <div class="inventory">74 in stock</div>
+            <div class="cost">$182.88</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="15">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/16">Blue Silk Tuxedo</a></h2>
+            <div class="image"><img alt="Blue Silk Tuxedo image"
+                                    src="https://burst.shopifycdn.com/photos/man-adjusts-blue-tuxedo-bowtie_925x.jpg"></div>
+            <div class="inventory">84 in stock</div>
+            <div class="cost">$26.48</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="16">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/17">Red Sports Tee</a></h2>
+            <div class="image"><img alt="Red Sports Tee image"
+                                    src="https://burst.shopifycdn.com/photos/womens-red-t-shirt_925x.jpg"></div>
+            <div class="inventory">64 in stock</div>
+            <div class="cost">$50.11</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="17">
+                <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/18">Striped Skirt and Top</a></h2>
+            <div class="image"><img alt="Striped Skirt and Top image"
+                                    src="https://burst.shopifycdn.com/photos/woman-in-the-city_925x.jpg"></div>
+            <div class="inventory">76 in stock</div>
+            <div class="cost">$35.78</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="18">
+                    <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+                </form>
+            </div>
+        </div>
+        <div class="product">
+            <h2><a href="/product/19">LED High Tops</a></h2>
+            <div class="image"><img alt="LED High Tops image"
+                                    src="https://burst.shopifycdn.com/photos/putting-on-your-shoes_925x.jpg"></div>
+            <div class="inventory">40 in stock</div>
+            <div class="cost">$96.69</div>
+            <div class="cart">
+                <form action="/cart" method='POST'>
+                    <input name="quantity" type="number" value="1">
+                    <input name="item" type="hidden" value="19">
+                   <a  style ="text-decoration:none" href="cart.html">ADD TO CART</a>
+		
+                </form>
+            </div>
+        </div>
+  </div>
+ <hr><br>
+ <footer>
+        <div class="row justify-content-around mb-0 pt-5 mx-4">
+            <div class="col-xl-2 col-md-4 order-xl-1 order-4 mr-xl-0 my-auto">
+                <ul class="list-unstyled mt-md-3 mt-5">
+                    <li>Social Media</li>
+                    <li class="social"> <span> <i class="fa fa-facebook" aria-hidden="true"></i></span> <span> <i class="fa fa-instagram" aria-hidden="true"></i> </span> <span> <i class="fa fa-twitter" aria-hidden="true"></i> </span> </li>
+                </ul>
+                <ul class="list-unstyled my-xl-4 my-md-3">
+                    <li>Copyright</li>
+                    <li>&#9400; Doodles 2020</li>
+                </ul>
+            </div>
+            <div class="col-xl-2 col-md-3 pt-4 order-1">
+                <ul class="list-unstyled">
+                    <li class="mt-md-0 mt-4">	HOME</li>
+                    <li>UNIQUENESS </li>
+                    <li>STYLE</li>
+                    <li>QUALITY</li>
+                    <li>PRICE</li>
+                </ul>
+            </div>
+            <div class="col-xl-2 col-md-3 pt-4 order-2">
+                <ul class="list-unstyled">
+                    <li class="mt-md-0 mt-4">Your needs</li>
+                    <li>design</li>
+                    <li>Core Features</li>
+                    <li>Product Features</li>
+                    <li>Pricing</li>
+                </ul>
+            </div>
+            <div class="col-xl-auto col-md-3 pt-4 my-sm-0 order-md-3 order-sm-1 ">
+                <ul class="list-unstyled">
+                    <li class="mt-md-0 mt-4">Offer</li>
+                    <li>Intergrated Security </li>
+                    <li>Core Features</li>
+                    <li>Product Features</li>
+                    <li>Pricing</li>
+                </ul>
+            </div>
+            <div class="col-xl-auto col-md-6 col-12 pt-4 my-sm-0 order-6 ">
+                <div class="form-group "><label for="email" class="mb-3"><b>Subscribe to our newsletter and Get 10% off</b></label><input type="email" class="form-control form-control-lg" placeholder="Enter email" id="email"></div><button type="button" class="btn btn-primary btn-lg btn-block my-2 Subscribe mt-4 mb-3">Subscribe</button>
+            </div>
+        </div>
+        <div class="row justify-content-center px-3 py-3 pt-5">
+            <div class="col text-center">
+                <p class="mb-0">DOODLES A BESTCOMPANY</p>
+                <p>STYLE YOU AND SMILE WITH US.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+
+</html>

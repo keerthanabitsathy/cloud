@@ -1,0 +1,726 @@
+<html>
+<style>
+.options {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  margin-top:0px;
+  -webkit-box-pack:justify;
+  -webkit-justify-content:space-between;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+}
+.product-item .main-content {
+  padding: 0px 46px 25px 20px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #222;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+h1 {
+  letter-spacing: 0px;
+  letter-spacing: .02rem;
+  font-size: 48px;
+  font-size: 3rem;
+}
+
+h3 {
+  color: #666;
+  font-size: 19px;
+  font-size: 1.2rem;
+  font-family: inherit;
+
+}
+
+.description {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.highlight-window {
+	/*margin-top: 25px;*/
+  height: 550px;
+  width: 400px;
+  background: #ccc;
+  background: url('https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone6s/rosegold/iphone6s-rosegold-select-2015?wid=470&hei=556&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=km8l12');
+  transition: all .5s ease;
+  background-size: cover;
+  /*box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);*/
+  z-index: 10;
+  position:relative;
+  background-position:center top;
+}
+
+
+.color {
+  height: 30px;
+  cursor:pointer;
+  width: 30px;
+  background: #eee;
+  /*border: 1px solid #D0D0D0;*/
+  position:relative;
+}
+
+.color.overlay {
+  position:absolute;
+  z-index:10;
+  background:transparent;
+  top:-1px;
+  left:-1px;
+  -webkit-transform:translateX(45px);
+      -ms-transform:translateX(45px);
+          transform:translateX(45px);
+  border:2px solid #fff;
+  outline:2px solid #333333;
+  -webkit-transition:-webkit-transform .3s ease;
+          transition:transform .3s ease;
+}
+.color-a {
+  background: #DEDFE1;
+  margin-right:14px;
+}
+
+.color-b {
+  background: #DDA4AD;
+	margin-right:14px;
+}
+
+.color-c {
+  background: #FFE599;
+	margin-right:14px;
+}
+.color-d {
+  background: #929191;
+	margin-right:14px;
+}
+
+.color-picker {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 180px;
+  margin-top:5px;
+  position:relative;
+}
+a {
+  text-decoration:none;
+}
+a:hover {
+  text-decoration:underline;
+  color:#666;
+}
+.product-item .button {
+  background:#333;
+  border:none;
+  font-weight:400;
+  height:40px;
+  margin-top:auto;
+  margin-bottom:auto;
+  padding-left:25px;
+  padding-right:25px;
+  box-sizing:border-box;
+  color:#fff;
+  cursor:pointer;
+  -webkit-transition:all .3s ease;
+          transition:all .3s ease;
+}
+.product-item .button:hover {
+  background:#555;
+  -webkit-transition:all .3s ease;
+          transition:all .3s ease;
+}
+.divider {
+  width:80%;
+  height:1px;
+  background:#ddd;
+  margin-top:20px;
+  margin-bottom:20px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.color-options {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  width:50%;
+  -webkit-flex-flow:column;
+      -ms-flex-flow:column;
+          flex-flow:column;
+}
+.size-picker {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-flex-flow:column;
+      -ms-flex-flow:column;
+          flex-flow:column;
+}
+.small {
+  font-size: 11px;
+  font-size: 1.2rem;
+  color:#999;
+  margin-top:10px;
+}
+.align-right {
+  -webkit-align-self:flex-end;
+      -ms-flex-item-align:end;
+          align-self:flex-end;
+}
+.size-desc {
+  -webkit-align-self:flex-end;
+      -ms-flex-item-align:end;
+          align-self:flex-end;
+}
+
+.purchase-info {
+  -webkit-box-pack:justify;
+  -webkit-justify-content:space-between;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+}
+.price {
+  font-size: 40px;
+  font-size:2.5rem;
+  white-space: nowrap;
+}
+
+.product-item .price span {
+	text-decoration: line-through;
+	margin-right: 20px;
+}
+
+.range-picker {
+  font-size: 16px;
+  font-size:1rem;
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  margin-top:5px;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+      -ms-flex-align:center;
+          align-items:center;
+  line-height:.9em;
+}
+.range-picker div {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  border-right:1px solid #bbb;
+  border-top:1px solid #bbb;
+  border-bottom:1px solid #bbb;
+  -webkit-box-align:center;
+  -webkit-align-items:center;
+      -ms-flex-align:center;
+          align-items:center;
+  color:#bbb;
+  width:30px;
+  box-sizing:border-box;
+  cursor:pointer;
+  -webkit-box-pack:center;
+  -webkit-justify-content:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  height:30px;
+  -webkit-transition:background .5s ease;
+          transition:background .5s ease;
+}
+.highlight-window.mobile {
+  display:none;
+}
+.range-picker .active:hover {
+  background:#fff;
+}
+.range-picker .active {
+  -webkit-transform:scale(1.2);
+      -ms-transform:scale(1.2);
+          transform:scale(1.2);
+  background:#fff;
+  margin-right:3px;
+  margin-left:2px;
+  color:#333;
+  border:1px solid #666;
+  z-index:1;
+}
+.check {
+  position:absolute;
+  right:0px;
+  left:0px;
+  margin-left:auto;
+  margin-right:auto;
+  background:transparent;
+  width:0px;
+  bottom:-3px;
+  border-left:10px solid transparent;
+  border-bottom:10px solid #333333;
+  border-right:10px solid transparent;
+  height:0px;
+}
+.range-picker div:hover {
+  background:#eee;
+  -webkit-transition:background .2s;
+          transition:background .2s;
+}
+.range-picker div:first-child {
+  border-left:1px solid #bbb;
+}
+.range-picker div.active:first-child {
+  border-left:1px solid #333;
+}
+
+.product-item .h3 {
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 2px;
+	color: #808080;
+	font-family: inherit;
+	/*font-style: italic;*/
+	/*font-family: 'Playfair Display', serif*/
+}
+
+.product-item p {
+	letter-spacing: 1px;
+	font-size: 14px;
+	color: #808080;
+	line-height: 25px;
+}
+
+.product-item .description ul{
+	margin: 0;
+	padding: 0;
+	margin-left: 15px;
+}
+
+.product-item .description ul li {
+	font-size: 1.3rem;
+	letter-spacing: 0.5px;
+	/*color: #666;*/
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	line-height: 2.5rem;
+}
+
+.product-item  ul > li:before {
+		content: '- ';
+}
+
+.product-item form {
+	margin-top: 20px;
+}
+
+.product-block {
+	margin-top: 10px;
+}
+
+
+
+
+.product-item input::-webkit-input-placeholder, 
+.product-item textarea::-webkit-input-placeholder, 
+.product-item select::-webkit-input-placeholder{
+	color: #ccc;
+	opacity: 1;
+}
+
+.product-item input::-moz-input-placeholder, 
+.product-item textarea::-moz-input-placeholder, 
+.product-item select::-moz-input-placeholder{
+	color: #ccc;
+	opacity: 1;
+}
+.product-item input::-ms-input-placeholder, 
+.product-item textarea::-ms-input-placeholder, 
+.product-item select::-ms-input-placeholder{
+	color: #ccc;
+	opacity: 1;
+} 
+
+
+@media (max-width: 600px) {
+	.product-item .purchase-info{
+		display: block;
+		text-align: center;
+	}
+	.product-item .button{
+		margin-top: 30px;
+	}
+
+	.highlight-window {
+		height: 400px;
+		width: auto;
+	}
+
+	.product-block {
+	margin-top: 0px;
+}
+
+}
+header{
+background-color: #ffe6ff;
+margin:0px;
+padding:12px;
+}
+li {
+      display: inline;  
+    }
+footer{
+background-color: black;
+color:white;
+
+padding:20px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.topnav a {
+  float: center;
+  display: inline;
+  color: black;
+  text-align: center;
+  padding: 200 50px;
+
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ccffff;
+  color: black;
+}
+
+.topnav .icon {
+  display: none;
+}
+.fa-solid fa-user a:hover{
+border-radius: 10px 0px 10px 0px;
+background-color:lighblue;
+}
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+	text-align:center;
+  }
+}
+
+
+
+
+
+
+</style>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">   
+  
+</head>
+
+<body>
+<header>
+<ul>
+    <li><a  style=" text-transform:lowercase;font-family:Serif Times New Roman;color:black;font-size:12px;" class="fa-solid fa-location-dot" href="https://goo.gl/maps/w19JngBqMmeNBBUR9"> &nbsp; &nbsp; H-73,&nbsp; Periyar Nagar Rd,&nbsp; Periyar Nagar, Erode </a></li> 
+    <li><a style="float:right;  font-style: italic;color:black;font-size:10px;" class="fa-solid fa-phone">&nbsp;&nbsp;9629646695</a></li> 
+ <i  style ="float:right"class="fa-solid fa-magnifying-glass"></i>	
+   
+  </ul>
+</header>
+<center>
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">DOODLES</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active" ><a href="doodles.html">HOME</a></li>
+      <li><a href="shop.html">SHOP</a></li>
+      <li><a href="doodlecontact.html">CONTACT</a></li>
+      <li><a href="doodleabout.html">ABOUT US</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="doodlesignin.html"><span class="glyphicon glyphicon-user"></span>SIGNIN/REGISTER</a></li>
+	  <li><a href="admin.html">ADMIN DASHBOARD</a></li>
+  
+    </ul>
+  </div>
+</nav>
+<section id='pricing' class='pricing-section' >
+				<div class='container' >
+
+					<div class='section-header text-center' >
+						<h2 class='wow fadeInUp' data-wow-delay='.2s' >Price</h2>
+						<p class='wow fadeInUp' data-wow-delay='.4s' ></p>
+					</div>
+
+					<div class='row' >
+
+						<div class="product-block">
+						<div class="col-md-6 wow fadeInUp" data-wow-delay='.4s'>
+							<div class='background-element' id='background-element'></div>
+							<div class='highlight-window' id='product-img'>
+								<div class='highlight-overlay' id='highlight-overlay'></div>
+							</div>
+						</div>
+
+						<div class="col-md-6 wow fadeInUp" data-wow-delay='.4s'>
+							<div class='product-item'>
+								<div class='main-content'>
+									<h2>DOODLES</h2>
+									
+									<div class='description' id='description'>
+										<h3 class="h3"> THE FASHION:</h3>
+										
+
+										<p>
+Fashion is important because it reflects the culture of a country. It makes our life colourful and changes our life with time. In a way it also adds variety to life, providing an opportunity in trying out something new. ... Fashion is how you carry yourself in society without wearing anything trendy.</p>
+									</div>
+									<div class='highlight-window  mobile' id='product-img'>
+										<div class='highlight-overlay' id='highlight-overlay-mobile'></div>
+									</div>
+
+									<div class='options'>
+										<div class='color-options'>
+											<span class="h3">COLOR</span>
+											<div class='color-picker'>
+												<div class='color overlay' id='color-overlay'><div class='check'></div></div>
+												<div class='color color-a' id='color-a'></div>
+												<div class='color color-b' id='color-b'></div>
+												<div class='color color-c' id='color-c'></div>
+												<div class='color color-d' id='color-d'></div>
+											</div>
+											<span class='small' >Color : <span id='color-name'>Rosegold</span></span>
+										</div>
+										<div class='size-picker'>
+											<!-- Size: -->
+                      <span class='align-right h3'>SIZE</span>
+											<div class='range-picker' id='range-picker'>
+												 <div>16</div><div class='active'>32</div><div>64</div><div>128</div>
+											</div>
+											  
+										</div>
+									</div>
+									
+									<form action="" class="shop-form">
+										<div class="row">
+											<input type="hidden" name="color" value="Rosegold" id="color-input">
+											<div class="col-sm-6">
+											<div class='form-group' >
+												<input type="text" name="name" class="form-control"  placeholder="Your Name..." required>
+												<div class='help-block with-errors' ></div>
+											</div>
+											</div>
+											<div class="col-sm-6">
+											<div class='form-group' >
+												<input type="tel" name="phone" class="form-control"  placeholder="Your Phone..." required>
+												<div class='help-block with-errors' ></div>
+											</div>
+											</div>
+											
+											<div class="col-sm-12">
+											<div class='form-group' >
+												<input type="text" name="address" class="form-control"  placeholder="Your Address..." required>
+												<div class='help-block with-errors' ></div>
+											</div>
+										</div>
+											
+										<div class="col-sm-12">
+										<div class='divider'></div>
+										<div class='purchase-info'> 
+											<div class='price'><span> 2200  rupees</span> 1900 rupees</div>
+											<input type="submit" class="button" value="ADD TO CART">
+										</div>
+									</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				</div>
+
+			</section>
+  
+  </body>
+  <script>
+  document.getElementById('range-picker').addEventListener('click', function(e) {
+  var sizeList = document.getElementById('range-picker').children;
+  for (var i = 0; i <= sizeList.length - 1; i++) {
+    console.log(sizeList[i].classList);
+    if (sizeList[i].classList.contains('active')) {
+      sizeList[i].classList.remove('active');
+    }
+  }
+  e.target.classList.add('active');
+})
+
+document.getElementById('color-a').addEventListener('click', function() {
+  document.getElementById('color-overlay').style.transform = 'translateX(-0px)';
+  document.getElementById('color-name').innerHTML = "Silver";
+  document.getElementById('color-input').value = 'Silver';
+  document.getElementById("product-img").style.backgroundImage = "url('https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2hpcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60')";
+
+})
+document.getElementById('color-b').addEventListener('click', function() {
+  document.getElementById('color-overlay').style.transform = 'translateX(45px)';
+  document.getElementById('color-name').innerHTML = "Rosegold";
+  document.getElementById('color-input').value = 'Rosegold';
+  document.getElementById("product-img").style.backgroundImage = "url('https://images.unsplash.com/photo-1613423755148-0ff5515d60be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cm9zZWdvbGQlMjBkcmVzc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60')";
+})
+
+document.getElementById('color-c').addEventListener('click', function() {
+  document.getElementById('color-overlay').style.transform = 'translateX(90px)';
+  document.getElementById('color-name').innerHTML = "Gold";
+  document.getElementById('color-input').value = 'Gold';
+  document.getElementById("product-img").style.backgroundImage = "url('https://images.unsplash.com/photo-1578587018452-892bacefd3f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60')";
+})
+document.getElementById('color-d').addEventListener('click', function() {
+  document.getElementById('color-overlay').style.transform = 'translateX(134px)';
+  document.getElementById('color-name').innerHTML = "Spacegray";
+  document.getElementById('color-input').value = 'Spacegray';
+  document.getElementById("product-img").style.backgroundImage = "url('https://images.unsplash.com/photo-1611003967145-fb3960072424?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8a2lkcyUyMGRyZXNzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60')";
+})
+
+</script>
+
+<footer>
+<div class="container my-5">
+
+  <footer class="text-white text-center text-lg-start bg-dark">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row mt-4">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">About company</h5>
+
+          <p>
+           Doodles is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Myntra aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country
+          </p>
+
+          <p>
+           Doodles understands its shoppers' needs and caters to them with choice of apparel, accessories, cosmetics and footwear from over 500 leading Indian and international brands. Prominent brands include Adidas, Nike, Puma, Catwalk, Inc 5, United Colors of Benetton, FCUK, Timberland, Avirate, FabIndia and Biba to name a few. You can also shop from some recently introduced labels such as - Roadster, Sher Singh, Dressberry, Kook N Keech and ETC.
+          </p>
+
+          <div class="mt-4">
+            <!-- Facebook -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-facebook-f"></i></a>
+            <!-- Dribbble -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-dribbble"></i></a>
+            <!-- Twitter -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-twitter"></i></a>
+            <!-- Google + -->
+            <a type="button" class="btn btn-floating btn-light btn-lg"><i class="fab fa-google-plus-g"></i></a>
+            <!-- Linkedin -->
+          </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+
+          <div class="form-outline form-white mb-4">
+            <input type="text" id="formControlLg" class="form-control form-control-lg" />
+            <label class="form-label" for="formControlLg">Search</label>
+          </div>
+
+          <ul class="fa-ul" style="margin-left: 1.65em;">
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Warsaw, 00-967, Poland</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">contact@example.com</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 48 234 567 88</span>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+          <table  style="color:white" class="table text-center ">
+            <tbody class="fw-normal">
+              <tr>
+                <td>Mon - Thu:</td>
+                <td>8am - 9pm</td>
+              </tr>
+              <tr>
+                <td>Fri - Sat:</td>
+                <td>8am - 1am</td>
+              </tr>
+              <tr>
+                <td>Sunday:</td>
+                <td>9am - 10pm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="doodles.html">doodles.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+</div>
+<!-- End of .container -->
+</footer>
+</html>
